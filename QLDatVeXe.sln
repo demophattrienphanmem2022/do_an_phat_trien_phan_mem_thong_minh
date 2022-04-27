@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "QLDatVeXe\GUI.csproj", "{B4E8763B-F3CD-42F7-B236-F6A5151D9FCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CONTROLS", "CONTROLS\CONTROLS.csproj", "{0C9F8044-76B8-45AC-B66F-9276604951D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THUVIEN", "ThuVien\THUVIEN.csproj", "{9BC04F28-5F70-4C44-A546-1F9405A58F33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4E8763B-F3CD-42F7-B236-F6A5151D9FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E8763B-F3CD-42F7-B236-F6A5151D9FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E8763B-F3CD-42F7-B236-F6A5151D9FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E8763B-F3CD-42F7-B236-F6A5151D9FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C9F8044-76B8-45AC-B66F-9276604951D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C9F8044-76B8-45AC-B66F-9276604951D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C9F8044-76B8-45AC-B66F-9276604951D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C9F8044-76B8-45AC-B66F-9276604951D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC04F28-5F70-4C44-A546-1F9405A58F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC04F28-5F70-4C44-A546-1F9405A58F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC04F28-5F70-4C44-A546-1F9405A58F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC04F28-5F70-4C44-A546-1F9405A58F33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
