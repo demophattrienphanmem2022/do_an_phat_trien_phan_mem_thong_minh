@@ -220,7 +220,7 @@ BEGIN
 END
 GO
 
-CREATE TRIGGER trg_CountLichChay ON LichChay_Xe
+CREATE TRIGGER trg_CountLichChay_Xe ON LichChay_Xe
 AFTER INSERT
 AS
 BEGIN
@@ -253,7 +253,7 @@ END
 ----------------Indentity
 go
 insert into Identify
-values(0,0,0,0,0,0)
+values(0,0,0,0,0,0,0)
 go
 insert into LoaiNhanVien
 values(N'Nhân viên quản lý',0)
@@ -372,7 +372,7 @@ insert into LichChay
 values('LC00001','05/25/2022','19','LT00001','NV00003','05/09/2022',NULL,0)
 go
 insert into LichChay
-values('LC00002','05/25/2022','19','LT00002','NV00003','05/09/2022',NULL,0)
+values('LC00002','05/25/2022','6','LT00002','NV00003','05/09/2022',NULL,0)
 --------------Nhập lịch chạy xe
 go
 insert into LichChay_Xe
@@ -398,8 +398,6 @@ go
 insert into ChiTietVeXe
 values('VX00001','02A')
 
-select * from LichChay
-
-select lc.MaLichChay, lc.NgayKhoiHanh, lc.GioKhoiHanh, lc.MaLoTrinh, nv.TenNhanVien, lc.fl_NgayThem, lc.fl_NgaySua
-from LichChay lc, NhanVien nv
-where lc.MaNhanVien = nv.MaNhanVien
+select lc.MaLichChay, lc.NgayKhoiHanh, lc.GioKhoiHanh, lc.MaLoTrinh, lt.DiemDi, lt.DiemDen
+from LichChay lc, LoTrinh lt
+where lc.MaLoTrinh = lt.MaLoTrinh
