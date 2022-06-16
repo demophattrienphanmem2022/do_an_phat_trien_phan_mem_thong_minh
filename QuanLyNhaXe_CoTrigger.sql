@@ -144,12 +144,10 @@ go
 create table TrungChuyen
 (
 	MaTrungChuyen varchar(10) not null primary key,
-	NgayKhoiHanh datetime not null,
-	GioKhoiHanh varchar(10) not null,
-	DiemDen nvarchar(100) not null,
+	DiemDi nvarchar(50) not null,
+	DiemDen nvarchar(50) not null,
+	QuangDuong int not null,
 	MaDiaChiTrungChuyen varchar(10) not null,
-	fl_NgayThem datetime not null,
-	fl_NgaySua datetime,
 	fl_Xoa int not null,
 	CONSTRAINT FK_TrungChuyen_DiaChiTrungChuyen FOREIGN KEY (MaDiaChiTrungChuyen) REFERENCES DiaChiTrungChuyen(MaDiaChiTrungChuyen)
 )
@@ -163,12 +161,10 @@ create table VeXe
 	MaNhanVien varchar(10) not null,
 	MaKhachHang varchar(10) not null,
 	MaLichChay_Xe varchar(10) not null,
-	MaTrungChuyen varchar(10),
 	fl_Xoa int not null,
 	CONSTRAINT FK_VeXe_KhachHang FOREIGN KEY (MaKhachHang) REFERENCES KhachHang(MaKhachHang),
 	CONSTRAINT FK_VeXe_NhanVien FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien),
-	CONSTRAINT FK_VeXe_LichChay_Xe FOREIGN KEY (MaLichChay_Xe) REFERENCES LichChay_Xe(MaLichChay_Xe),
-	CONSTRAINT FK_VeXe_TrungChuyen FOREIGN KEY (MaTrungChuyen) REFERENCES TrungChuyen(MaTrungChuyen)
+	CONSTRAINT FK_VeXe_LichChay_Xe FOREIGN KEY (MaLichChay_Xe) REFERENCES LichChay_Xe(MaLichChay_Xe)
 )
 go
 create table ChiTietVeXe
@@ -389,7 +385,7 @@ values('LCX00004',0,'LC00002','XE00004','05/09/2022',NULL,0)
 -------------Nhập vé xe
 go
 insert into VeXe
-values('VX00001',50000,2,100000,'NV00002','KH00001','LCX00001',NULL,0)
+values('VX00001',50000,2,100000,'NV00002','KH00001','LCX00001',0)
 ------------Nhập chi tiết vé xe
 go
 insert into ChiTietVeXe
@@ -397,7 +393,53 @@ values('VX00001','01A')
 go
 insert into ChiTietVeXe
 values('VX00001','02A')
-
-select lc.MaLichChay, lc.NgayKhoiHanh, lc.GioKhoiHanh, lc.MaLoTrinh, lt.DiemDi, lt.DiemDen
-from LichChay lc, LoTrinh lt
-where lc.MaLoTrinh = lt.MaLoTrinh
+------------Nhập địa chỉ
+go
+insert into DiaChiTrungChuyen
+values('DC00001',N'Hồ Chí Minh',0)
+go
+insert into DiaChiTrungChuyen
+values('DC00002',N'Đồng Tháp',0)
+go
+insert into DiaChiTrungChuyen
+values('DC00003',N'Bạc Liêu',0)
+---------------Nhập trung chuyển
+go
+insert into TrungChuyen
+values('TC00001','BXMT','Bình Tân',5,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00002','BXMT','Tân Phú',16,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00003','BXMT','Q6',3,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00004','Bình Tân','Q12',18,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00005','Tân Phú','Q12',2,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00006','Tân Phú','Q5',7,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00007','Tân Phú','Q10',6,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00008','Q6','Q10',5,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00009','Q6','Tân Phú',10,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00010','Q12','BXMD',20,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00011','Q5','BXMD',10,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00012','Q10','Q5',8,'DC00001',0)
+go
+insert into TrungChuyen
+values('TC00013','Q10','BXMD',5,'DC00001',0)
